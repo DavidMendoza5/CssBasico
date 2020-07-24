@@ -1,0 +1,12 @@
+
+.box {
+    background: yellow; /* Lo que se muestra en amarillo es el content box */
+    background-clip: content-box;
+
+    /* Elementos del modelo de caja */
+    width: 500px;   /* Ancho */
+    height: 300px;  /* Alto */
+    padding: 50px;  /* Separación entre el contenido y el límite de la caja (parte blanca) */
+    border: 10px solid black;
+    margin: 50px;   /* Separación con el resto de elementos fuera de la caja */
+}

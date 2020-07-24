@@ -1,0 +1,33 @@
+
+/* Por eso se recomienda trabajar con clases, eso evita tener que poner muchos elementos para la especificidad y trabajar en un sólo nivel */
+/* Debido a la especificidad el estilo que toma el párrafo contenido en el div es el color azul, ya que es más específico */
+div#main .post p {  /* 112 puntos de especificidad */
+    color: blue;
+}
+
+#main .post p {  /* 111 puntos de especificidad */
+    color: red;
+}
+
+p {  /* 1 punto de especificidad */
+    color: green;
+}
+
+/* Cascada */
+
+h2 {
+    color: blue;
+}
+
+h2 {    /* El navegador va a tomar éste estilo debido al concepto de cascada */
+    color: green;
+}
+
+/* Herencia */
+.herencia {     /* Padre */
+    color: green;
+}
+span {  /* Hijo */
+    color: inherit;     /* De esta forma indicamos que herede el color del padre */
+}
+/* Igual hay una variable "initial" que restablece los valores del elemento */

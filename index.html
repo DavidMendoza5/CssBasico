@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS desde cero</title>
+    <link rel="stylesheet" href="style.css"> <!--    Esta es una forma de conectar HTML con CSS, se recomienda usar la etiqueta link en el head, otra forma es con la
+                                                    etiqueta style, igual se puede poner en cualquier parte pero se recomienda sea en el head    -->
+</head>
+<body>
+    <h1>CSS</h1>
+    <h2 class="second_title">Usando clases en  HTML</h2>  <!-- Se recomienda usar clases en lugar de ID para las etiquetas, de esa forma es mejor para ponerle estilos, las clases
+        no pueden empezar con números, pero sí pueden empezar con guiones bajos, incluso se pueden usar emojis estándar(unicode) para los nombres de las clases, los ID sólo se recomienda
+        usarlos para javascript debido a que son únicos y no se pueden reutilizar -->
+    <h2 id="subtitle">Ejemplo de ID</h2>
+    <h2 class="center bold">Usando dos clases creadas en CSS</h2> <!-- De esta forma podemos usar clases creadas por nosotros en CSS, las clases center y bold están en el style.css -->
+    <p class="paragraph center bold">Esto es un párrafo con clases de CSS</p>
+    <p class="p bold">Ejemplo selectores agrupados</p>
+    <p class="pa bold">Selectores agrupados</p>
+
+<!-- Ejemplo de selectores descendientes en CSS -->
+    <ul class="list">
+        <li class="list-item">Item 1</li>
+        <li class="list-item">Item 2
+            <ul>
+                <li>SubItem</li>
+                <li>SubItem</li>
+                <li>SubItem</li>
+            </ul>
+        </li>
+        <li class="list-item">Item 3
+            <span>Final</span>
+        </li>
+    </ul>
+<!-- Ejemplo de hermano siguiente -->
+    <h1 class="title-1">Título selectores hermano siguiente</h1>
+    <p class="p-subtitle">Subtítulo de h1</p>
+    <h2 class="title-2">Subtítulo</h2>
+    <p class="p-subtitle">Subtítulo de h2</p>
+
+<!-- Ejemplo de hermanos siguientes -->
+    <p class="hermano-mayor">Hermanos siguientes</p>
+    <p class="hermano">Hermanos siguientes</p>
+    <p>Hermanos siguientes</p>
+    <p class="hermano">Hermanos siguientes</p>
+    <p>Hermanos siguientes</p>
+    <p class="hermano">Hermanos siguientes</p>
+    <p>Hermanos siguientes</p>
+    <div>
+        <!-- Esta clase ya no es hermano de las anterirores debido a que no está al mismo nivel, viene siendo como un sobrino -->
+        <p class="hermano">Hermanos siguientes</p>
+    </div>
+
+    <input type="checkbox" class="check">
+    <p class="enabled">Activado</p>
+    <p class="disabled">Desactivado</p>
+
+<!-- Uso de selectores de atributos -->
+    <input type="email">
+    <input type="date" required>
+    <input type="submit" value="Enviar">
+    <a href="/home">Home</a>
+    <a href="/https://huastec/cursos">Cursos</a>
+    <a href="https://youtube.com">Youtube</a>
+    <a href="https://huasteco/recursos/clase.pdf">PDF</a>
+    <a href="" class="button-cta">Click</a>
+    <a href="" class="button-alert">No click</a>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+
+h1 {
+    font-size: 4rem;
+    /* Su tamaño está definido por el tamaño predeterminado del root (html) y no importa el tamaño del texto */
+}
+
+span {
+    font-size: 4em; /* El tamaño es 4 veces el de h1 debido a que se usa em, además de que depende del tamaño del texto */
+    color: red;
+}

@@ -1,0 +1,153 @@
+/* Conceptos básicos de CSS: Selectores, especificidad, herencia y cascada */
+/* Hay una librería llamada Normalize.css (hay que descargarla) que se encarga de poner estilos predefinidos para las etiquetas */
+
+/* Declaración de variables en CSS */
+:root {
+    --color_rojo: red;
+    --color_yellowGreen: yellowgreen;
+}
+/* Los selectores sencillos son los que directamente pones la etiqueta como selector y metes los estilos, sólo afectan a una etiqueta junto con su contenido, las siguientes reglas son selectores 
+   sencillos, NO se recomienda usarlos en proyectos, estos son "case sensitive" */
+
+/* A todo el conjunto de selectores con propiedades se le llama regla, y a las propiedades que se encuentran dentro de las llaves se les llama bloques */
+BODY {  /* Selector: Indica a qué elemento se le van a aplicar los estilos declarados */
+    background: var(--color_rojo);     /*Propiedad (atributo), igual a cada línea se le llama declaración, no son "case sensitive" */
+}
+
+h1{
+    background: white;    /* De esta forma se llama a una variable en CSS */
+    color: var(--color_rojo);
+}
+/* Selecotres de ID, se declaran con el símbolo #(hash) */
+#subtitle {
+    color: blue;
+}
+
+/* Selectore de clase, se pone un punto seguido del nombre de la clase, se recomienda usarlas para poryectos, estos no son "case sensitive" */
+.second_title {
+    color: green;
+}
+.paragraph {
+    background: green;
+}
+/* Declaramos dos clases para usarlas en el HTML */
+.bold {     /* Negritas */
+    font-weight: bold;
+}
+.center {   /* Centrado del texto */
+    text-align: center;
+}
+
+/* Selectores universales, se declaran con un * y afectan a todas las etiquetas, pero no se recomienda usarlo, ejemplo: 
+símbolo-asterisco {
+    color: red;   
+}    
+*/
+
+/* Selectores agrupados, se pueden poner varios selectores separados por comas para que compartan estilos, se recomienda poner los selectores en líneas diferentes */
+.p, 
+.pa {
+    background: white;
+    color: coral;
+}
+
+/* Selectores descendientes, no se recomienda usarlos debido a que se pueden usar clases lo cual es mejor, deben estar separados por espacios */
+/* Si no se separan con especios estamos diciendo que es un selector(derecha) que está dentro de otro selector(izquierda) */
+.list .list-item {     /* Estamos diciendo que a todos los hijos de la clase list, les ponga los estilos */
+    color: white;
+}
+.list span {
+    color: green;   /* Funciona para todos los elementos que se encuentren dentro del padre, en este caso span viene siendo nieto de .list */
+}
+
+/* Selector hijo directo, se usa con el símbolo >, sólo hace refencia a hijos directos a diferencia del selector descendiente el cual acepta nietos, bisnietos, etc */
+li > ul {      /* De esta forma accedemos sólo a los elementos de la segunda lista */
+    display: none;  /* Ocultar */
+    /* Al atributo display se le puede poner inline o block para transforma el elemento según el atributo colocado */
+}
+
+li:hover ul {   /* Subclase que sirve para mostrar los elementos cuando se acerca el puntero */
+    display: block; /* Mostrar */
+}
+
+/* Selector hermano siguiente */
+/* Con hermano nos referimos a que las clases, id o etiquetas tienen que estar al mismo nivel */
+/* Es una buena practica primero definir los estilos generales */
+.title-1 {
+    color: var(--color_yellowGreen);
+}
+
+.title-2 {
+    color: blue;
+}
+
+.p-subtitle {
+    font-size: 1em;
+}
+
+.title-1 + .p-subtitle {  /* De esta forma sólo afectamos al subtítulo que está debajo del h1 que tiene la clase title-1 */
+    color: var(--color_yellowGreen);
+}
+
+/* Selector hermanos siguientes, se usa con el símbolo tilde (~) este afecta a todos las clases que tengan el mismo nombre que estén después del hermano mayor, 
+a diferencia del hermano siguiente que sólo afecta a 1 elemento que debe estar seguido del hermano mayor. */
+/* Es decir, si usáramos el símbolo + (hermano siguiente), sólo afectaríamos a la clase hermano que está seguida de la clase hermano-mayor, pero al usar el símbolo ~ (hermanos siguientes)
+afectamos a todas las clases hermano que estén seguidas de la clase hermano-mayor */
+
+.hermano-mayor ~ .hermano {
+    color: yellowgreen;
+}
+
+.enabled {
+    display: none;
+}
+/* Mostrar un texto al activar o desactivar el checkbox */
+.check:checked ~ .enabled {
+    display: block;
+}
+.check:checked ~ .disabled {
+    display: none;
+}
+
+/* Selectores de atributos, se encierran en corchetes [], se puede poner sólo el atributo o poner atributo y valor */
+
+[type="email"] {
+    border: 5px solid blue;     /* Le pones un borde al input del email */
+}
+[type="submit"] {
+    background: cadetblue;
+    color: blue;
+    border: none;
+    display: block;
+}
+[required] {
+    border: 5px blue;
+    background: burlywood;
+}
+/* Con el símbolo ^ indicamos que el valor del atributo debe empezar con el valor puesto al selector */
+[href^="/"],
+[href^="https://huastec"] {
+    color: chartreuse;
+    background: url(https://i.pinimg.com/originals/b1/49/29/b149299570a264dd61c38d599bd4ebdc.png) no-repeat center right / 2rem;    /* Forma de poner imágenes */
+    padding-right: 2.2rem;
+}
+/* Con el símbolo $ indicamos que el valor del atributo debe terminar con el valor puesto al selector */
+[href$=".pdf"] {
+    color: yellow;
+}
+
+/* Con el símbolo * indicamos que el valor del atributo debe contener el valor puesto al selector, esto permite no tener que crear varias clases en el HTML */
+[class*="button-"] {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: white;
+}
+.button-cta {
+    background: orange;
+}
+.button-alert {
+    background: orchid;
+}
+
