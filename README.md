@@ -8,18 +8,18 @@ Conceptos básicos de CSS: Selectores, especificidad, herencia y cascada.
     el más específico, de ahí su nombre. Es a nivel de selectores. Url para calcular especificidad: [Especificidad](https://specificity.keegan.st/)
 - Cascada: Lo que viene después sobreescribe lo que está antes, viene de la mano con la especificidad. Es decir, si tienes dos elementos con el mismo nombre
     (mismp valor de especificidad) en el css, el navegador va a usar el segundo elemento declarado.
-
-Selectores: Indican el elemento al que se le va a aplicar un estilo en el archivo css, existen difenrentes tipos:
-- Sencillos.
-- De ID.
-- De clase
-- Universales.
-- Agrupados.
-- Descendientes.
-- Hijo directo.
-- Hermano siguiente.
-- Hermanos siguientes.
-- De atributos.
+- Selectores: Indican el elemento al que se le va a aplicar un estilo en el archivo css, existen diferentes tipos:
+    - Sencillos.
+    - De ID.
+    - De clase
+    - Universales.
+    - Agrupados.
+    - Descendientes.
+    - Hijo directo.
+    - Hermano siguiente.
+    - Hermanos siguientes.
+    - De atributos.
+- Herencia: Indica que lo hijos heredan los atributos del padre.
 
 Layout: Se refiere a la geometría de los elementos, es decir, en dónde van a estar puestos, sus márgenes, etc.
 
